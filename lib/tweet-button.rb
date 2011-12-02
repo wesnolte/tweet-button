@@ -11,7 +11,7 @@ module TweetButton
       html << tweet_widgets_js_tag
     end
     
-    html << link_to("Tweet", TWITTER_SHARE_URL, params)
+    html << link_to(:label, TWITTER_SHARE_URL, params)
   end
   
   class <<self
@@ -25,7 +25,8 @@ module TweetButton
       :text => "", 
       :related => "", 
       :count => "vertical", 
-      :lang => "en"
+      :lang => "en",
+      :label => "Tweet"
     }.merge(TweetButton.default_tweet_button_options || {})
   end
   
